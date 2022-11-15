@@ -24,10 +24,19 @@ public class GameManager : MonoBehaviour
     {
         float Length = Flag.transform.position.x - Car.transform.position.x;
         Distance.GetComponent<Text>().text = "距離目標還有：" + Length.ToString("F2") + "公尺";
-        float Figure = 100 / Length;
-        Score.GetComponent<Text>().text = "分數:" + Figure.ToString(); 
+        if (Length > 0)
+        {
+            float Figure = 100 / Length;
+            Score.GetComponent<Text>().text = "分數:" + Figure.ToString();
+        }
+        else 
+        {
+            int a=0;
+            Score.GetComponent<Text>().text = "分數:"+a.ToString();
 
 
 
+
+        }
     }
 }
